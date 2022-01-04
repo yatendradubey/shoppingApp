@@ -2,12 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Cart from './components/Cart';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    < BrowserRouter >
+      <Routes>
+         <Route exact path="/" element={<App/>} />
+         <Route path="/cart" element={<Cart />} />
+      </Routes>
+   </ BrowserRouter >
   </React.StrictMode>,
   document.getElementById('root')
 );
